@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180405 16:44:37.188" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="E:\E Drive\Workspaces\Python\FileTest\demo.robot" id="s1" name="Demo">
+<test id="s1-t1" name="LoginTest">
+<kw name="Open Browser to the Login Page">
+<kw name="Read Csv File" library="CSVLibrary">
+<arguments>
+<arg>userdetails.xls</arg>
+</arguments>
+<assign>
+<var>${all_users}</var>
+</assign>
+<msg timestamp="20180405 16:44:37.879" level="INFO">${all_users} = [{'username': 'akshay.yeluru', 'password': 'Ak$hay123'}, {'username': 'akshay.yeluru', 'password': 'Ak$hay123'}, {'username': 'akshay.yeluru', 'password': 'Ak$hay123'}]</msg>
+<status status="PASS" endtime="20180405 16:44:37.879" starttime="20180405 16:44:37.871"></status>
+</kw>
+<kw type="for" name="${users} IN [ @{all_users} ]">
+<kw type="foritem" name="${users} = {'username': 'akshay.yeluru', 'password': 'Ak$hay123'}">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${users}</arg>
+<arg>username</arg>
+</arguments>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20180405 16:44:37.880" level="INFO">${username} = akshay.yeluru</msg>
+<status status="PASS" endtime="20180405 16:44:37.881" starttime="20180405 16:44:37.880"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${users}</arg>
+<arg>password</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<msg timestamp="20180405 16:44:37.881" level="INFO">${password} = Ak$hay123</msg>
+<status status="PASS" endtime="20180405 16:44:37.881" starttime="20180405 16:44:37.881"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20180405 16:44:37.882" level="INFO">akshay.yeluru</msg>
+<status status="PASS" endtime="20180405 16:44:37.882" starttime="20180405 16:44:37.882"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20180405 16:44:37.883" level="INFO">Opening browser 'Chrome' to base url 'https://ebdt.login.us2.oraclecloud.com/oam/server/obrareq.cgi?encquery%3DqU1LyTS6b2MmlFRpx9ip0CwhpfklryRDGdnG2TG5UcdqZDIzcDqTZJZ930w3Wm7fed4%2B0gQBZXN28CAlpuzvTs7Ho8J8m8Mk6DhVSGT622sme%2F6T5nYbYNFnZpPmuRx9k8UksM50IhY4zx6DQfu7KxspGT%2FwjIPfCC74ADxpe%2BUUqdgZwZ3O5SfWoUGP%2FaU65iPMLJSaNerPQi24rtNLIbbOkBtkPnAmNKVjQlcOi9eWEYywh3RJYXAaU1yvsATs9kl9%2BB0FDEbf8sx5u4YEqsgLZdF98%2FCQV%2B8jqP4ngREicvAkQ7O%2BxvKJWKqGOV%2FzYa%2BTaOJV7YpPg4GYIOClaz7zb8bXhHfgSaAPt1FregYJQQx5L2XGCKhZ1SWgBCDz5LmPf6LDosJuPxyqujA%2FzRs3yXWMAYyz81mqvFzHaknOFz97yHkPKdjmQiFJD%2BfyENqZo9zqtmH3f1oP9DDs0JmRk5z27Ci%2FbgxTjqtAt9Rjka5L2OJgSVgXZe0vmcFK%20agentid%3DOraFusionApp_11AG%20ver%3D1%20crmethod%3D2&amp;ECID-Context=1.005QGLBVBDsB_6W_PxO5yd0003Op0006uv%3BkXhgv0ZCLILIIV8QjTPPGHRP_V9O%5EMPGpKSQ_UOTdJPOoPRRiG'.</msg>
+<status status="PASS" endtime="20180405 16:44:47.102" starttime="20180405 16:44:37.883"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180405 16:44:48.260" starttime="20180405 16:44:47.102"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>userid</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20180405 16:44:48.261" level="INFO">Typing text 'akshay.yeluru' into text field 'userid'.</msg>
+<status status="PASS" endtime="20180405 16:44:48.408" starttime="20180405 16:44:48.260"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20180405 16:44:48.408" level="INFO">Typing text 'Ak$hay123' into text field 'password'.</msg>
+<status status="PASS" endtime="20180405 16:44:48.520" starttime="20180405 16:44:48.408"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>Sign In</arg>
+</arguments>
+<msg timestamp="20180405 16:44:48.520" level="INFO">Clicking button 'Sign In'.</msg>
+<status status="PASS" endtime="20180405 16:44:53.517" starttime="20180405 16:44:48.520"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${Delay}</arg>
+</arguments>
+<msg timestamp="20180405 16:44:56.518" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180405 16:44:56.518" starttime="20180405 16:44:53.517"></status>
+</kw>
+<status status="PASS" endtime="20180405 16:44:56.518" starttime="20180405 16:44:37.880"></status>
+</kw>
+<kw type="foritem" name="${users} = {'username': 'akshay.yeluru', 'password': 'Ak$hay123'}">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${users}</arg>
+<arg>username</arg>
+</arguments>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20180405 16:44:56.519" level="INFO">${username} = akshay.yeluru</msg>
+<status status="PASS" endtime="20180405 16:44:56.519" starttime="20180405 16:44:56.519"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${users}</arg>
+<arg>password</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<msg timestamp="20180405 16:44:56.520" level="INFO">${password} = Ak$hay123</msg>
+<status status="PASS" endtime="20180405 16:44:56.520" starttime="20180405 16:44:56.520"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20180405 16:44:56.520" level="INFO">akshay.yeluru</msg>
+<status status="PASS" endtime="20180405 16:44:56.521" starttime="20180405 16:44:56.520"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20180405 16:44:56.521" level="INFO">Opening browser 'Chrome' to base url 'https://ebdt.login.us2.oraclecloud.com/oam/server/obrareq.cgi?encquery%3DqU1LyTS6b2MmlFRpx9ip0CwhpfklryRDGdnG2TG5UcdqZDIzcDqTZJZ930w3Wm7fed4%2B0gQBZXN28CAlpuzvTs7Ho8J8m8Mk6DhVSGT622sme%2F6T5nYbYNFnZpPmuRx9k8UksM50IhY4zx6DQfu7KxspGT%2FwjIPfCC74ADxpe%2BUUqdgZwZ3O5SfWoUGP%2FaU65iPMLJSaNerPQi24rtNLIbbOkBtkPnAmNKVjQlcOi9eWEYywh3RJYXAaU1yvsATs9kl9%2BB0FDEbf8sx5u4YEqsgLZdF98%2FCQV%2B8jqP4ngREicvAkQ7O%2BxvKJWKqGOV%2FzYa%2BTaOJV7YpPg4GYIOClaz7zb8bXhHfgSaAPt1FregYJQQx5L2XGCKhZ1SWgBCDz5LmPf6LDosJuPxyqujA%2FzRs3yXWMAYyz81mqvFzHaknOFz97yHkPKdjmQiFJD%2BfyENqZo9zqtmH3f1oP9DDs0JmRk5z27Ci%2FbgxTjqtAt9Rjka5L2OJgSVgXZe0vmcFK%20agentid%3DOraFusionApp_11AG%20ver%3D1%20crmethod%3D2&amp;ECID-Context=1.005QGLBVBDsB_6W_PxO5yd0003Op0006uv%3BkXhgv0ZCLILIIV8QjTPPGHRP_V9O%5EMPGpKSQ_UOTdJPOoPRRiG'.</msg>
+<status status="PASS" endtime="20180405 16:45:05.534" starttime="20180405 16:44:56.521"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180405 16:45:06.687" starttime="20180405 16:45:05.535"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>userid</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:06.687" level="INFO">Typing text 'akshay.yeluru' into text field 'userid'.</msg>
+<status status="PASS" endtime="20180405 16:45:06.848" starttime="20180405 16:45:06.687"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:06.849" level="INFO">Typing text 'Ak$hay123' into text field 'password'.</msg>
+<status status="PASS" endtime="20180405 16:45:06.960" starttime="20180405 16:45:06.849"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>Sign In</arg>
+</arguments>
+<msg timestamp="20180405 16:45:06.961" level="INFO">Clicking button 'Sign In'.</msg>
+<status status="PASS" endtime="20180405 16:45:12.301" starttime="20180405 16:45:06.961"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${Delay}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:15.302" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180405 16:45:15.302" starttime="20180405 16:45:12.301"></status>
+</kw>
+<status status="PASS" endtime="20180405 16:45:15.302" starttime="20180405 16:44:56.518"></status>
+</kw>
+<kw type="foritem" name="${users} = {'username': 'akshay.yeluru', 'password': 'Ak$hay123'}">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${users}</arg>
+<arg>username</arg>
+</arguments>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20180405 16:45:15.303" level="INFO">${username} = akshay.yeluru</msg>
+<status status="PASS" endtime="20180405 16:45:15.303" starttime="20180405 16:45:15.302"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${users}</arg>
+<arg>password</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<msg timestamp="20180405 16:45:15.303" level="INFO">${password} = Ak$hay123</msg>
+<status status="PASS" endtime="20180405 16:45:15.303" starttime="20180405 16:45:15.303"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:15.304" level="INFO">akshay.yeluru</msg>
+<status status="PASS" endtime="20180405 16:45:15.304" starttime="20180405 16:45:15.303"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:15.304" level="INFO">Opening browser 'Chrome' to base url 'https://ebdt.login.us2.oraclecloud.com/oam/server/obrareq.cgi?encquery%3DqU1LyTS6b2MmlFRpx9ip0CwhpfklryRDGdnG2TG5UcdqZDIzcDqTZJZ930w3Wm7fed4%2B0gQBZXN28CAlpuzvTs7Ho8J8m8Mk6DhVSGT622sme%2F6T5nYbYNFnZpPmuRx9k8UksM50IhY4zx6DQfu7KxspGT%2FwjIPfCC74ADxpe%2BUUqdgZwZ3O5SfWoUGP%2FaU65iPMLJSaNerPQi24rtNLIbbOkBtkPnAmNKVjQlcOi9eWEYywh3RJYXAaU1yvsATs9kl9%2BB0FDEbf8sx5u4YEqsgLZdF98%2FCQV%2B8jqP4ngREicvAkQ7O%2BxvKJWKqGOV%2FzYa%2BTaOJV7YpPg4GYIOClaz7zb8bXhHfgSaAPt1FregYJQQx5L2XGCKhZ1SWgBCDz5LmPf6LDosJuPxyqujA%2FzRs3yXWMAYyz81mqvFzHaknOFz97yHkPKdjmQiFJD%2BfyENqZo9zqtmH3f1oP9DDs0JmRk5z27Ci%2FbgxTjqtAt9Rjka5L2OJgSVgXZe0vmcFK%20agentid%3DOraFusionApp_11AG%20ver%3D1%20crmethod%3D2&amp;ECID-Context=1.005QGLBVBDsB_6W_PxO5yd0003Op0006uv%3BkXhgv0ZCLILIIV8QjTPPGHRP_V9O%5EMPGpKSQ_UOTdJPOoPRRiG'.</msg>
+<status status="PASS" endtime="20180405 16:45:25.366" starttime="20180405 16:45:15.304"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180405 16:45:26.531" starttime="20180405 16:45:25.366"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>userid</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:26.531" level="INFO">Typing text 'akshay.yeluru' into text field 'userid'.</msg>
+<status status="PASS" endtime="20180405 16:45:26.696" starttime="20180405 16:45:26.531"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:26.696" level="INFO">Typing text 'Ak$hay123' into text field 'password'.</msg>
+<status status="PASS" endtime="20180405 16:45:26.811" starttime="20180405 16:45:26.696"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>Sign In</arg>
+</arguments>
+<msg timestamp="20180405 16:45:26.812" level="INFO">Clicking button 'Sign In'.</msg>
+<status status="PASS" endtime="20180405 16:45:32.169" starttime="20180405 16:45:26.811"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${Delay}</arg>
+</arguments>
+<msg timestamp="20180405 16:45:35.171" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180405 16:45:35.171" starttime="20180405 16:45:32.169"></status>
+</kw>
+<status status="PASS" endtime="20180405 16:45:35.172" starttime="20180405 16:45:15.302"></status>
+</kw>
+<status status="PASS" endtime="20180405 16:45:35.172" starttime="20180405 16:44:37.880"></status>
+</kw>
+<status status="PASS" endtime="20180405 16:45:35.172" starttime="20180405 16:44:37.871"></status>
+</kw>
+<status status="PASS" endtime="20180405 16:45:35.173" critical="yes" starttime="20180405 16:44:37.871"></status>
+</test>
+<status status="PASS" endtime="20180405 16:45:35.176" starttime="20180405 16:44:37.196"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Demo" pass="1">Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
